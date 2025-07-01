@@ -2,6 +2,13 @@ GET http://127.0.0.1:3000/producto
 
 ###guardar producto
 POST http://127.0.0.1:3000/producto
+Content-Type: application/json
+
+{
+    "nombre": "mesa",
+    "precio": 150,
+    "stock": 8
+}
 
 ###mostrar un producto
 GET  http://127.0.0.1:3000/producto/1
@@ -10,4 +17,4 @@ GET  http://127.0.0.1:3000/producto/1
 PUT  http://127.0.0.1:3000/producto/1
 
 ###eliminar producto
-DELETE http://127.0.0.1:3000/producto/1
+DELETE  http://127.0.0.1:3000/producto/1

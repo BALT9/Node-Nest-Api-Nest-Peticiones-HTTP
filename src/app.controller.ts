@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -25,13 +25,17 @@ export class AppController {
   }
 
   @Post('/producto')
-  funGuardarProducto(){
+  funGuardarProducto(
+    @Body()
+    datos
+  ){
+    console.log(datos);
     return 'guardando producto...'
   }
 
   @Get('/producto/:id')
-  funMostrar(){
-    return "Mostrando producto..."
+  funMostrar(@Param('id') id){
+    return "Mostrando producto..."+id;
   }
   
   @Put('/producto/:id')
